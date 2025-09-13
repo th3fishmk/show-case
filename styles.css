@@ -13,6 +13,8 @@
     width: 100vw;
     height: 100vh;
     overflow: auto;
+    background-image: linear-gradient(90deg, #2c3e50, #e74c3c);
+    color: #d3d3d3;
 }
 
 .header {
@@ -24,6 +26,7 @@
     grid-column: span 5 / span 5;
     grid-row: span 6 / span 6;
     grid-row-start: 2;
+    display: flex;
 }
 
 .showcase {
@@ -43,11 +46,12 @@
     background-color: #011522;
     margin: 1rem;
     border-radius: 8px;
+    width: 350px;
 }
 .container {
     display: flex;
-    flex-flow: column wrap;
     align-items: center;
+    justify-items: center;
 }
 
 .tools {
@@ -81,16 +85,13 @@
     background-color: #00ca4e;
 }
 .card-content {
-    color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 0.5rem;
-    height: 100%;
 }
 h2 {
     font-size: 2rem;
-    color: antiquewhite;
 }
 .profile-picture {
     border-radius: 50%;
@@ -101,19 +102,18 @@ button {
     padding: 0.5rem;
     border: 0;
     margin: 1rem;
-}
-.insta {
-    background-color: #ff605c;
-    color: white;
-}
-.gh {
-    background-color: #ffbd44;
-    color: white;
+    border-radius: 8px;
+    background-color: #e74c3c;
 }
 
 button:hover {
-    background-color: white;
-    color: #011522;
+    box-shadow: 10px 5px 5px #2c3e50;
+    transition: 0.5s;
+}
+
+button:active {
+    color: #d3d3d3;
+    transition: 0.1s;
 }
 
 table {
@@ -125,4 +125,25 @@ td:first-child {
 }
 td:nth-child(2) {
     text-align: right;
+}
+
+p {
+    position: relative;
+    text-decoration: none;
+}
+
+p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #e74c3c;
+    box-shadow: 0 0 10px #2c3e50;
+    transition: width 0.3s ease;
+}
+
+p:hover::after {
+    width: 100%;
 }
